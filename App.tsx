@@ -1,118 +1,88 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React, { useState } from 'react';
+import { Text, View, Button, SafeAreaView } from 'react-native';
+import UserData from './components/UserData';
+import ButtonProperties from './components/ButtonProperties';
+import CssStyle from './components/CssStyle';
+import InputProperties from "./components/InputProperties";
+import InputFrom from './components/InputForm';
+import ListWithFlatList from './components/ListWithFlatList';
+import DyanmicGrid from './components/DyanmicGrid';
+import Example from './components/Example';
+import SectionLists from './components/SectionLists';
+import Teacher from './components/ClassComponents';
+import Hooks from './components/Hooks';
+import UseEffectUnMount from './components/UseEffectUnMount'
+import Responsive from './components/Responsive';
+import TouchAbleHighlight from './components/TouchAbleHighlight';
+import RadioButton from './components/RadioButton';
+import Loader from './components/Loader';
+import Model from './components/Model';
+import PressableButton from './components/PressableButton';
+import MyStatusBar from './components/StatusBar';
+import PlatForm from './components/Platform';
+import WebsiteWebView from './components/WebSiteWebView'
+import CustomModel from './components/CustomModel';
+import Navigation from './components/Navigation';
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+function App(): React.JSX.Element {
+
+  const [name, setName] = useState("Sonu")
+
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    
+     <View >
+      <Text style={{ fontSize: 30, textAlign: 'center' }}>App</Text>
+      {/* <UserData/> */}
+      {/* <ButtonProperties /> */}
+      {/* <Child name={name} />
+      <Button title='Press' onPress={()=>setName("Rathore")}></Button> */}
+      {/* <CssStyle /> */}
+      {/* <InputProperties /> */}
+      {/* <InputFrom/> */}
+      {/* <ListWithFlatList/> */}
+      {/* <DyanmicGrid/> */}
+      {/* <Example/> */}
+      {/* <SectionLists /> */}
+      {/* <Teacher/> */}
+      {/* <Hooks/> */}
+      {/* <UseEffectUnMount /> */}
+      {/* <Responsive/> */}
+      {/* <TouchAbleHighlight/> */}
+      {/* <RadioButton /> */}
+      {/* <Loader /> */}
+      {/* <Model/> */}
+      {/* <PressableButton/> */}
+      {/* <MyStatusBar/> */}
+      {/* <PlatForm/> */}
+      {/* <WebsiteWebView/> */}
+      <CustomModel/>
+      {/* <Navigation/> */}
+      
+
+
+
+
+
+
+
+
     </View>
   );
 }
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
+//Props
+// const Child=(props)=>{
+//   return(
+//     <View style={{backgroundColor:"pink"}}>
+//       <Text style={{fontSize:30}}>{props.name}</Text>
+//     </View>
+//   )
+// }
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
